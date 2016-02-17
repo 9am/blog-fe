@@ -1,11 +1,11 @@
 /**
- * @file Portfolio
+ * @file BlogList
  * @author 9am(gbgogb@gmail.com)
  */
 
 import React from 'react';
 
-class Portfolio extends React.Component {
+class BlogList extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -13,11 +13,11 @@ class Portfolio extends React.Component {
     render() {
         return (
             <div>
-                <h1>Portfolio</h1>
-                <h2>{this.props.params.name}</h2>
+                <h1>TBD</h1>
+                <h2>TBD...</h2>
             </div>
         );
     }
 }
 
-export default Portfolio;
+export default BlogList;

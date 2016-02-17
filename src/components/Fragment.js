@@ -4,6 +4,7 @@
  */
 
 import '../styles/fragment.less';
+
 import React from 'react';
 
 /**

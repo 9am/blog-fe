@@ -4,13 +4,11 @@
  */
 
 import React from 'react';
-
 import Header from './Header';
 import Footer from './Footer';
 import Navigator from './Navigator';
 
 class Home extends React.Component {
-
     constructor(props) {
         super(props);
     }
