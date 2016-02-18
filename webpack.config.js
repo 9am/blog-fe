@@ -1,11 +1,13 @@
 var path = require('path');
+var webpack = require('webpack');
 
 module.exports = {
-    entry: "./src/main.js",
+    entry: ["./src/main.js"],
     output: {
-        path: path.resolve(__dirname, 'build'),
-        publicPath: '/build/',
-        filename: "bundle.js"
+        path: path.resolve(__dirname, 'dist'),
+        publicPath: '/dist/',
+        filename: "bundle.js",
+        chunkFilename: '[id].chunk.js'
     },
     module: {
         preLoaders: [
@@ -35,5 +37,9 @@ module.exports = {
                 loader: "file-loader"
             }
         ]
-    }
+    },
+    plugins: [
+        // new webpack.optimize.UglifyJsPlugin(),
+        new webpack.optimize.CommonsChunkPlugin('common.js')
+    ]
 };

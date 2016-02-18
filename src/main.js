@@ -7,13 +7,6 @@ import './styles/main.less';
 import React from 'react';
 import { render } from 'react-dom';
 import { Router, Route, browserHistory } from 'react-router';
-
-import Home from './components/Home';
-import About from './components/About';
-import PortfolioList from './components/PortfolioList';
-import Portfolio from './components/Portfolio';
-import BlogList from './components/BlogList';
-import NoMatch from './components/NoMatch';
 // import pData from './pData'; // portfolio data, this will be in DB when backend ready.
 
 var pData = [
@@ -49,14 +42,45 @@ var pData = [
   }
 ];
 
+const home = (location, cb) => {
+    require.ensure([], (require) => {
+        cb(null, require('./components/Home').default)
+    })
+}
+const about = (location, cb) => {
+    require.ensure([], (require) => {
+        cb(null, require('./components/About').default)
+    })
+}
+const portfolioList = (location, cb) => {
+    require.ensure([], (require) => {
+        cb(null, require('./components/PortfolioList').default)
+    })
+}
+const portfolio = (location, cb) => {
+    require.ensure([], (require) => {
+        cb(null, require('./components/Portfolio').default)
+    })
+}
+const blogList = (location, cb) => {
+    require.ensure([], (require) => {
+        cb(null, require('./components/BlogList').default)
+    })
+}
+const noMatch = (location, cb) => {
+    require.ensure([], (require) => {
+        cb(null, require('./components/NoMatch').default)
+    })
+}
+
 render((
     <Router history={browserHistory}>
-        <Route path="/" component={Home}>
-            <Route path="about" component={About}/>
-            <Route path="portfolio" component={PortfolioList} list={pData}/>
-            <Route path="portfolio/:name" component={Portfolio}/>
-            <Route path="blog" component={BlogList}/>
-            <Route path="*" component={NoMatch}/>
+        <Route path="/" getComponent={home}>
+            <Route path="about" getComponent={about}/>
+            <Route path="portfolio" getComponent={portfolioList} list={pData}/>
+            <Route path="portfolio/:name" getComponent={portfolio}/>
+            <Route path="blog" getComponent={blogList}/>
+            <Route path="*" getComponent={noMatch}/>
         </Route>
     </Router>
 ), document.getElementById('route-container'));
