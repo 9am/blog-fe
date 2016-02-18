@@ -14,9 +14,9 @@ import PortfolioList from './components/PortfolioList';
 import Portfolio from './components/Portfolio';
 import BlogList from './components/BlogList';
 import NoMatch from './components/NoMatch';
+// import pData from './pData'; // portfolio data, this will be in DB when backend ready.
 
-var listData = [
-
+var pData = [
   {
     key: 'tagcloud',
     title: "1234123412341234",
@@ -53,7 +53,7 @@ render((
     <Router history={browserHistory}>
         <Route path="/" component={Home}>
             <Route path="about" component={About}/>
-            <Route path="portfolio" component={PortfolioList} list={listData}/>
+            <Route path="portfolio" component={PortfolioList} list={pData}/>
             <Route path="portfolio/:name" component={Portfolio}/>
             <Route path="blog" component={BlogList}/>
             <Route path="*" component={NoMatch}/>
