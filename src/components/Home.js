@@ -6,7 +6,6 @@
 import React from 'react';
 import Header from './Header';
 import Footer from './Footer';
-import Navigator from './Navigator';
 
 class Home extends React.Component {
     constructor(props) {
@@ -28,7 +27,6 @@ class Home extends React.Component {
         return (
             <div>
                 <Header zoomIn={this.state.zoomIn}></Header>
-                <Navigator></Navigator>
                 {this.props.children}
                 <Footer zoomIn={this.state.zoomIn}></Footer>
             </div>

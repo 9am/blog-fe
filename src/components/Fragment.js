@@ -70,7 +70,7 @@ class Fragment extends React.Component {
     static get defaultProps() {
         return {
             width: '100%',
-            height: '600px',
+            height: 600,
             blockSize: 100,
             step: 10
         }

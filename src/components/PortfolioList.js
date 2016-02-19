@@ -72,7 +72,6 @@ class PortfolioList extends React.Component {
         });
         return (
             <div className="portfolio-list">
-                <h1>PortfolioList</h1>
                 <ul>
                     {items}
                 </ul>

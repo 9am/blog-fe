@@ -23,7 +23,7 @@ class Portfolio extends React.Component {
             height: '100vh'
         };
         if (timestamp) {
-            style.minHeight = '720px';
+            style.minHeight = 720;
         }
         return (
             <div className="iframe-container">

@@ -7,6 +7,7 @@ import '../styles/header.less'
 
 import React from 'react';
 import Fragment from './Fragment';
+import Navigator from './Navigator';
 
 class Header extends React.Component {
     constructor(props) {
@@ -14,12 +15,16 @@ class Header extends React.Component {
     }
 
     render() {
-        let style = {
-            maxHeight: this.props.zoomIn ? '100px' : '600px'
+        let headerStyle = {
+            maxHeight: this.props.zoomIn ? 100 : 600
         };
+        let navigator = this.props.zoomIn
+            ? ('')
+            : (<Navigator></Navigator>);
         return (
-            <header className="header" style={style}>
+            <header className="header" style={headerStyle}>
                 <Fragment></Fragment>
+                {navigator}
             </header>
         );
     }
