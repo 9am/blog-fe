@@ -14,9 +14,11 @@ class Footer extends React.Component {
     }
 
     render() {
+        let style = {
+            maxHeight: this.props.zoomIn ? '100px' : '600px'
+        };
         return (
-            <footer className="footer">
-                <h1>footer</h1>
+            <footer className="footer" style={style}>
                 <Fragment></Fragment>
             </footer>
         );

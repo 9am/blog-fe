@@ -14,9 +14,11 @@ class Header extends React.Component {
     }
 
     render() {
+        let style = {
+            maxHeight: this.props.zoomIn ? '100px' : '600px'
+        };
         return (
-            <header className="header">
-                <h1>header</h1>
+            <header className="header" style={style}>
                 <Fragment></Fragment>
             </header>
         );

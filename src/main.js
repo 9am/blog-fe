@@ -6,12 +6,12 @@
 import './styles/main.less';
 import React from 'react';
 import { render } from 'react-dom';
-import { Router, Route, browserHistory } from 'react-router';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 // import pData from './pData'; // portfolio data, this will be in DB when backend ready.
 
 var pData = [
   {
-    key: 'tagcloud',
+    key: 'gameoflife',
     title: "1234123412341234",
     timestamp: 1455695682272,
     desc: "aergaerfaervawrefawefawerawrfawe",
@@ -25,9 +25,9 @@ var pData = [
         + '207.0,118.0 210.5,132.5 198.0,146.5 155.0,125.75'
   },
   {
-    key: 'bird',
+    key: 'graph_canvas',
     title: "4567456745674567",
-    timestamp: 1455695682272,
+    timestamp: 1455852001821,
     desc: "bnbsefbsergwergwergwergqergwergwerg",
     tag: [
       "aaaa",
@@ -76,6 +76,7 @@ const noMatch = (location, cb) => {
 render((
     <Router history={browserHistory}>
         <Route path="/" getComponent={home}>
+            <IndexRoute getComponent={portfolioList} list={pData}/>
             <Route path="about" getComponent={about}/>
             <Route path="portfolio" getComponent={portfolioList} list={pData}/>
             <Route path="portfolio/:name" getComponent={portfolio}/>

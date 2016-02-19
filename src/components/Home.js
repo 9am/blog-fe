@@ -11,15 +11,26 @@ import Navigator from './Navigator';
 class Home extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            zoomIn: this.props.location.pathname.match(/portfolio\//)
+        }
+    }
+
+    componentWillReceiveProps(newProps) {
+        if (newProps.location.pathname !== this.props.location.pathname) {
+            this.setState({
+                zoomIn: newProps.location.pathname.match(/portfolio\//)
+            });
+        }
     }
 
     render() {
         return (
             <div>
-                <Header></Header>
+                <Header zoomIn={this.state.zoomIn}></Header>
                 <Navigator></Navigator>
                 {this.props.children}
-                <Footer></Footer>
+                <Footer zoomIn={this.state.zoomIn}></Footer>
             </div>
         );
     }

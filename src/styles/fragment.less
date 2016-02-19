@@ -1,3 +1,5 @@
+@import './mixins.less';
+
 .fragment {
     background-color: #464646;
     display: block;
@@ -7,10 +9,7 @@
     text-align: center;
     .f-polygon {
         opacity: 0.7;
-        transition: opacity 300ms ease-out;
-        -moz-transition: opacity 300ms ease-out;
-        -webkit-transition: opacity 300ms ease-out;
-        -o-transition: opacity 300ms ease-out;
+        .transition(opacity 300ms ease-out);
         &:hover {
             opacity: 1;
         }
