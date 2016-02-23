@@ -13,7 +13,7 @@ class BlogList extends React.Component {
     render() {
         return (
             <div>
-                <h1>TBD</h1>
+                <h1>Blog</h1>
                 <h2>TBD...</h2>
             </div>
         );

@@ -70,7 +70,7 @@ class Fragment extends React.Component {
     static get defaultProps() {
         return {
             width: '100%',
-            height: 600,
+            height: 560,
             blockSize: 100,
             step: 10
         }
@@ -178,6 +178,8 @@ class Fragment extends React.Component {
         return (
             <svg className="fragment"
                 version="1.1"
+                xmlns="http://www.w3.org/2000/svg" 
+                xmlnsXlink="http://www.w3.org/1999/xlink"
                 preserveAspectRatio="xMidYMid slice"
                 viewBox={viewBox}
                 width={this.props.width}
