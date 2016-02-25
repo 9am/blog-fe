@@ -94,7 +94,7 @@ class Navigator extends React.Component {
             <div className="navigator">
                 <img
                     className="avatar"
-                    src="assets/img/dog.jpg"
+                    src="assets/img/dog.png"
                     title="9am"
                     alt="avatar"
                     onClick={this.clickAvatarHandler}/>

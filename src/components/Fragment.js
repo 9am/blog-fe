@@ -94,6 +94,7 @@ class Fragment extends React.Component {
             Fragment.darkColor[this.randomInt(Fragment.darkColor.length)],
             Fragment.brightColor[this.randomInt(Fragment.brightColor.length)]
         );
+        let colorArrLength = colorArr.length;
 
         // 初始化所有点
         for (let j = 0; j < step; j++) {
@@ -119,7 +120,7 @@ class Fragment extends React.Component {
                         p1={pointsArr[i + x + jStep]}
                         p2={pointsArr[i + y + jPlusStep]}
                         p3={pointsArr[i + z + jPlusStep]}
-                        fill={colorArr[that.randomInt(colorArr.length)]}>
+                        fill={colorArr[that.randomInt(colorArrLength)]}>
                     </Polygon>
                 );
                 polygons.push(
@@ -128,7 +129,7 @@ class Fragment extends React.Component {
                         p1={pointsArr[i + a + jStep]}
                         p2={pointsArr[i + b + jStep]}
                         p3={pointsArr[i + c + jPlusStep]}
-                        fill={colorArr[that.randomInt(colorArr.length)]}>
+                        fill={colorArr[that.randomInt(colorArrLength)]}>
                     </Polygon>
                 );
             }

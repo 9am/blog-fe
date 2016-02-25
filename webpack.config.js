@@ -1,7 +1,9 @@
 var path = require('path');
 var webpack = require('webpack');
 
-module.exports = {
+var NODE_ENV = process.env.NODE_ENV ? process.env.NODE_ENV.toLowerCase() : 'dev';
+
+var config = {
     entry: ["./src/main.js"],
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -39,7 +41,19 @@ module.exports = {
         ]
     },
     plugins: [
-        // new webpack.optimize.UglifyJsPlugin(),
         new webpack.optimize.CommonsChunkPlugin('common.js')
     ]
 };
+
+if (NODE_ENV === 'production') {
+    config.plugins.push(
+        new webpack.optimize.UglifyJsPlugin({
+            minimize: true,
+            compress:{
+                warnings: true
+            }
+        })
+    );
+}
+
+module.exports = config;

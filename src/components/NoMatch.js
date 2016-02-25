@@ -13,7 +13,7 @@ class NoMatch extends React.Component {
     render() {
         return (
             <div>
-                <h1 style={{color:'red'}}>NoMatch</h1>
+                <h1 style={{color:'red'}}>No Match</h1>
             </div>
         );
     }
