@@ -16,9 +16,9 @@ class Portfolio extends React.Component {
         let { name } = this.props.params;
         let { timestamp } = this.props.location.query;
         // TODO use timestamp to seperate old from new
-        let url = timestamp
-            ? 'http://gaobo.sinaapp.com/portfolio/'
-            : 'static/';
+        // let url = timestamp
+        //     ? 'http://gaobo.sinaapp.com/portfolio/'
+        //     : 'static/';
         let style = {
             height: '100vh'
         };
@@ -27,7 +27,11 @@ class Portfolio extends React.Component {
         }
         return (
             <div className="iframe-container">
-                <iframe className="iframe-page" src={url + name} style={style}></iframe>
+                <iframe
+                    className="iframe-page"
+                    src={'http://gaobo.sinaapp.com/portfolio/' + name} 
+                    style={style}
+                ></iframe>
             </div>
         );
     }
